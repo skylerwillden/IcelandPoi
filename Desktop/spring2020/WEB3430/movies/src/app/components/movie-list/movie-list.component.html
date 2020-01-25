@@ -1,0 +1,5 @@
+<div class="container">
+  <div class="columns is-multiline">
+     <movie-list-item-el (select)="logSelection($event)" [movie]="m" *ngFor="let m of movies$ | async" class="column is-one-third"></movie-list-item-el>
+  </div>
+</div>
