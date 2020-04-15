@@ -1,0 +1,117 @@
+<div class="container">
+    <div *ngIf='isEdit; then editCourse else addCourse'></div>
+    <ng-template  #editCourse>
+        <p class='title'>  Edit a course</p>
+      </ng-template>
+      <ng-template #addCourse>
+        <p class="title">Add a new course</p>
+      </ng-template>
+      <form #f="ngForm" [formGroup]="courseForm" (ngSubmit)="submitForm(f)">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label for="crn" class="label">CRN</label>
+              <div class="control">
+                <input type="hidden" formControlName="id">
+                <input type="hidden" formControlName="added_at">
+                <input type="hidden" formControlName="updated_at">
+                <input type="text" class="input" formControlName="crn">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && crn.invalid">
+                CRN is required
+              </p>
+            </div>
+            <div class="field">
+              <label for="instructor" class="label">Instructor</label>
+              <div class="control">
+                <input type="text" class="input" formControlName="instructor">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && instructor.invalid">
+                Instructor is required
+              </p>
+            </div>
+            <div class="field">
+              <label for="creditHours" class="label">Credit Hours</label>
+              <div class="control">
+                <input type="number" class="input" formControlName="creditHours">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && creditHours.invalid">
+                Credit Hours is required
+              </p>
+            </div>
+            <div class="field">
+              <label for="semester" class="label">Semester</label>
+              <div class="control">
+                <input type="text" class="input" formControlName="semester">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && semester.invalid">
+                semester is required
+              </p>
+            </div>
+            <div class="field">
+              <label for="year" class="label">Year</label>
+              <div class="control">
+                <input type="number" class="input" formControlName="year">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && year.invalid">
+                year is required
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="title" class="label">Title</label>
+          <div class="control">
+            <input type="text" class="input" formControlName="title">
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && title.invalid">
+            title is required
+          </p>
+        </div>
+        <div class="field">
+          <label for="description" class="label">Description</label>
+          <div class="control">
+            <input type="text" class="textarea" formControlName="description">
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && description.invalid">
+           Description required
+          </p>
+        </div>
+        <div class="field">
+          <label for="posterImage" class="label">Poster</label>
+          <div class="control">
+            <input type="url" class="input" formControlName="posterImage">
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && posterImage.invalid">
+            Image is required.
+          </p>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <label for="beginDate" class="label">Begin Date</label>
+              <div class="control">
+                <input type="date" class="input" formControlName="beginDate">
+              </div>
+              <p class="help is-danger" *ngIf='f.submitted && beginDate.invalid'>
+                beginning date required
+              </p>
+            </div>
+            <div class="field">
+              <label for="endDate" class="label">End Date</label>
+              <div class="control">
+                <input type="date" class="input" formControlName="endDate">
+              </div>
+              <p class="help is-danger" *ngIf="f.submitted && endDate.invalid">
+                End date is required
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+</div>

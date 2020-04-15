@@ -1,0 +1,31 @@
+<div class='card has-background-light'>
+    <div class="card-image">
+        <figure class="image">
+          <img src="{{ course.posterImage }}" alt="Placeholder image"> 
+        </figure>
+      </div> 
+      <div class='card-content'>
+    <div class="media">
+      <div class="media-content">
+        <p class="title">{{ course.title }}</p>
+      </div>
+      </div> 
+  <div class="content"></div>
+        <span>ID: {{course.id}}</span><br>
+        <span>{{course.crn}}</span><br>
+        <span>{{course.description}}</span><br>
+        <span>credits: {{course.creditHours}}</span><br>
+        <span> instructor: {{course.instructor}} </span><br>
+        <span>semester: {{course.semester}} {{course.year}}</span><br>
+        <span>Start Date: {{course.beginDate | date}}</span><br>
+        <span>End Date: {{course.endDate | date}}</span><br>
+        <span>Added: {{course.added_at | date:'medium'}}</span><br>
+        <span>Last Updated: {{ course.updated_at  | date:'medium'}}</span><br>
+      </div>
+      <div class="buttons is-centered">
+      <button routerLink="/courses/{{ course.id}}/edit" class="button is-warning">
+        Edit
+    </button>
+  </div>
+</div>
+   

@@ -1,0 +1,13 @@
+
+<div class="container">
+   <div class="buttons is-pulled-right">
+      <button (click)="sortBy('title')" class="button  has-background-primary">Sort by Title</button>
+      <button (click)="sortBy('id')" class="button has-background-warning">Sort by Id</button>
+      <button routerLink="/courses/new" class="button is-primary">Add New Course</button>
+    </div>
+    <div class="columns is-multiline">
+       <app-course [course]="m" *ngFor="let m of sortCourses(courses$ | async)" class="column is-one-quarter"></app-course>
+    </div>
+  </div>
+  
+
