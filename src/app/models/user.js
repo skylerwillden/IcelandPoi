@@ -67,8 +67,8 @@ userSchema.methods.isValidPassword = function(password){
 }
 
 userSchema.methods.generateJWT = function(){
-  let expirerOn = new Date()
-  expirerOn.setDate(expireOn.getDate()  + AUTH_TOKEN_EXPIRES_IN)
+  let expireOn = new Date()
+  expireOn.setDate(expireOn.getDate()  + AUTH_TOKEN_EXPIRES_IN)
 
   return jwt.sign({
       _id: this._id,

@@ -1,0 +1,63 @@
+<div class="container">
+  <p class="title">User Registration</p>
+  <p>If you have an account, please sign in
+      <a routerLink="/signin"  class="button is-success">Sign in</a>
+  </p>
+  <form #f='ngForm' (ngSubmit)="submitForm(f)" [formGroup]="userRegister">
+      <div class="field">
+          <label for="firstName" class="label">First Name</label>
+          <div class="control">
+            <input type="text" class="input" formControlName="firstName" > 
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && firstName.invalid">
+            First Name is required
+          </p>
+        </div>
+        <div class="field">
+          <label for="lastName" class="label">Last Name</label>
+          <div class="control">
+            <input type="text" class="input" formControlName="lastName" > 
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && lastName.invalid">
+            Last Name is required
+          </p>
+        </div>
+        <div class="field">
+          <label for="email" class="label">Email</label>
+          <div class="control">
+            <input type="text" class="input" formControlName="email" > 
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && email.invalid">
+            email is required
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="username" class="label">Username</label>
+          <div class="control">
+            <input type="username" class="input" formControlName="username">
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && username.invalid">
+              Username is required
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="password" class="label">Password</label>
+          <div class="control">
+            <input type="password" class="input" formControlName="password">
+          </div>
+          <p class="help is-danger" *ngIf="f.submitted && password.invalid">
+              Password is required
+          </p>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary">Submit</button>
+            <button class="button" routerLink="/courses">Cancel</button>
+          </div>
+        </div>
+  </form>
+  
+</div>

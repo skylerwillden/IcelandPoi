@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n  <div class=\"navbar-brand\">\n    <a class=\"navbar-item\" routerLink=\"courses/\">\n      <img src=\"https://bulma.io/images/bulma-logo.png\" alt=\"Bulma: Free, open source, and modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n    </a>\n\n    <a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\">\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n    </a>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar\" role=\"navigation\" aria-label=\"main navigation\">\n  <div class=\"navbar-brand\">\n    <a class=\"navbar-item\" routerLink=\"courses/\">\n      <img src=\"https://bulma.io/images/bulma-logo.png\" alt=\"Bulma: Free, open source, and modern CSS framework based on Flexbox\" width=\"112\" height=\"28\">\n    </a>\n\n    <a role=\"button\" class=\"navbar-burger\" aria-label=\"menu\" aria-expanded=\"false\">\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n      <span aria-hidden=\"true\"></span>\n    </a>\n  </div>\n  <div class=\"navbar-end\">\n    <a *ngIf=\"signedIn\" (click)=\"signout()\" class=\"navbar-item\"> Sign Out</a>\n    <a *ngIf=\"notSignedIn\" routerLink=\"/register\" class=\"navbar-item\"> Register</a>\n    <a *ngIf=\"notSignedIn\" routerLink=\"/signin\" class=\"navbar-item\"> Sign in</a>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -85,6 +85,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class='card has-background-light'>\n    <div class=\"card-image\">\n        <figure class=\"image\">\n          <img src=\"{{ course.posterImage }}\" alt=\"Placeholder image\"> \n        </figure>\n      </div> \n      <div class='card-content'>\n    <div class=\"media\">\n      <div class=\"media-content\">\n        <p class=\"title\">{{ course.title }}</p>\n      </div>\n      </div> \n  <div class=\"content\"></div>\n        <span>ID: {{course.id}}</span><br>\n        <span>{{course.crn}}</span><br>\n        <span>{{course.description}}</span><br>\n        <span>credits: {{course.creditHours}}</span><br>\n        <span> instructor: {{course.instructor}} </span><br>\n        <span>semester: {{course.semester}} {{course.year}}</span><br>\n        <span>Start Date: {{course.beginDate | date}}</span><br>\n        <span>End Date: {{course.endDate | date}}</span><br>\n        <span>Added: {{course.added_at | date:'medium'}}</span><br>\n        <span>Last Updated: {{ course.updated_at  | date:'medium'}}</span><br>\n      </div>\n      <div class=\"buttons is-centered\">\n      <button routerLink=\"/courses/{{ course.id}}/edit\" class=\"button is-warning\">\n        Edit\n    </button>\n  </div>\n</div>\n   ");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n  <p class=\"title\">User Registration</p>\n  <p>If you have an account, please sign in\n      <a routerLink=\"/signin\"  class=\"button is-success\">Sign in</a>\n  </p>\n  <form #f='ngForm' (ngSubmit)=\"submitForm(f)\" [formGroup]=\"userRegister\">\n      <div class=\"field\">\n          <label for=\"firstName\" class=\"label\">First Name</label>\n          <div class=\"control\">\n            <input type=\"text\" class=\"input\" formControlName=\"firstName\" > \n          </div>\n          <p class=\"help is-danger\" *ngIf=\"f.submitted && firstName.invalid\">\n            First Name is required\n          </p>\n        </div>\n        <div class=\"field\">\n          <label for=\"lastName\" class=\"label\">Last Name</label>\n          <div class=\"control\">\n            <input type=\"text\" class=\"input\" formControlName=\"lastName\" > \n          </div>\n          <p class=\"help is-danger\" *ngIf=\"f.submitted && lastName.invalid\">\n            Last Name is required\n          </p>\n        </div>\n        <div class=\"field\">\n          <label for=\"email\" class=\"label\">Email</label>\n          <div class=\"control\">\n            <input type=\"text\" class=\"input\" formControlName=\"email\" > \n          </div>\n          <p class=\"help is-danger\" *ngIf=\"f.submitted && email.invalid\">\n            email is required\n          </p>\n        </div>\n\n        <div class=\"field\">\n          <label for=\"username\" class=\"label\">Username</label>\n          <div class=\"control\">\n            <input type=\"username\" class=\"input\" formControlName=\"username\">\n          </div>\n          <p class=\"help is-danger\" *ngIf=\"f.submitted && username.invalid\">\n              Username is required\n          </p>\n        </div>\n\n        <div class=\"field\">\n          <label for=\"password\" class=\"label\">Password</label>\n          <div class=\"control\">\n            <input type=\"password\" class=\"input\" formControlName=\"password\">\n          </div>\n          <p class=\"help is-danger\" *ngIf=\"f.submitted && password.invalid\">\n              Password is required\n          </p>\n        </div>\n\n        <div class=\"field\">\n          <div class=\"control\">\n            <button class=\"button is-primary\">Submit</button>\n            <button class=\"button\" routerLink=\"/courses\">Cancel</button>\n          </div>\n        </div>\n  </form>\n  \n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html ***!
+  \*********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <p class=\"title\">User sign in</p>\n    <p>If you don't have an account, please register\n        <a routerLink=\"/register\"  class=\"button is-success\"> Register</a>\n    </p>\n    <form #f='ngForm' (ngSubmit)=\"submitForm(f)\">\n        <div class=\"field\">\n            <label for=\"username\" class=\"label\">Username</label>\n            <div class=\"control\">\n              <input type=\"text\" class=\"input\" name=\"username\" id=\"username\" \n              required #username=\"ngModel\" [(ngModel)]=\"user.username\">\n            </div>\n            <p class=\"help is-danger\" *ngIf=\"f.submitted && username.invalid\">\n              Username is required\n            </p>\n          </div>\n          <div class=\"field\">\n            <label for=\"password\" class=\"label\">Password</label>\n            <div class=\"control\">\n              <input type=\"password\" class=\"input\" name=\"password\" id=\"password\" \n              required #password=\"ngModel\" [(ngModel)]=\"user.password\">\n            </div>\n            <p class=\"help is-danger\" *ngIf=\"f.submitted && password.invalid\">\n                Password is required\n            </p>\n          </div>\n\n          <div class=\"field\">\n            <div class=\"control\">\n              <button class=\"button is-primary\">Submit</button>\n              <button class=\"button\" routerLink=\"/courses\">Cancel</button>\n            </div>\n          </div>\n    </form>\n    \n</div>\n");
 
 /***/ }),
 
@@ -342,14 +368,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
+
+
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(router, userService) {
+        this.router = router;
+        this.userService = userService;
         this.title = 'courses';
         this.description = 'An application that shows and organizes a list of courses.';
     }
+    get signedIn() {
+        return _services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"].isAuthenticated();
+    }
+    get notSignedIn() {
+        return !this.signedIn;
+    }
+    signout() {
+        this.userService.signout();
+        this.router.navigate(["/courses"]);
+    }
 };
+AppComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -378,21 +424,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_course_course_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/course/course.component */ "./src/app/components/course/course.component.ts");
-/* harmony import */ var _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/course-list/course-list.component */ "./src/app/components/course-list/course-list.component.ts");
-/* harmony import */ var _services_courses_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/courses.service */ "./src/app/services/courses.service.ts");
-/* harmony import */ var _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/course-form/course-form.component */ "./src/app/components/course-form/course-form.component.ts");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
-/* harmony import */ var _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/course-details/course-details.component */ "./src/app/components/course-details/course-details.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_course_course_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/course/course.component */ "./src/app/components/course/course.component.ts");
+/* harmony import */ var _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/course-list/course-list.component */ "./src/app/components/course-list/course-list.component.ts");
+/* harmony import */ var _services_courses_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/courses.service */ "./src/app/services/courses.service.ts");
+/* harmony import */ var _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/course-form/course-form.component */ "./src/app/components/course-form/course-form.component.ts");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
+/* harmony import */ var _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/course-details/course-details.component */ "./src/app/components/course-details/course-details.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/user-register/user-register.component */ "./src/app/components/user-register/user-register.component.ts");
+/* harmony import */ var _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-signin/user-signin.component */ "./src/app/components/user-signin/user-signin.component.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
 
 
 
 
 
 
-// import { ToastrModule } from 'ngx-toastr';
+
+
+
+
+
 
 
 
@@ -406,23 +461,25 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-            _components_course_course_component__WEBPACK_IMPORTED_MODULE_7__["CourseComponent"],
-            _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_8__["CourseListComponent"],
-            _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_10__["CourseFormComponent"],
-            _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_12__["CourseDetailsComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+            _components_course_course_component__WEBPACK_IMPORTED_MODULE_8__["CourseComponent"],
+            _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_9__["CourseListComponent"],
+            _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_11__["CourseFormComponent"],
+            _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_13__["CourseDetailsComponent"],
+            _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_15__["UserRegisterComponent"],
+            _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_16__["UserSigninComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_11__["routes"]),
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_12__["routes"]),
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-            // ToastrModule.forRoot(),
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"]
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrModule"].forRoot(),
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"]
         ],
-        providers: [_services_courses_service__WEBPACK_IMPORTED_MODULE_9__["CourseService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+        providers: [_services_courses_service__WEBPACK_IMPORTED_MODULE_10__["CourseService"], _services_user_service__WEBPACK_IMPORTED_MODULE_17__["UserService"], ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__["CookieService"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
 
@@ -457,14 +514,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_services_courses_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/courses.service */ "./src/app/services/courses.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+
 
 
 
 
 let CourseDetailsComponent = class CourseDetailsComponent {
-    constructor(courseService, route, router) {
+    constructor(courseService, route, toastr, router) {
         this.courseService = courseService;
         this.route = route;
+        this.toastr = toastr;
         this.router = router;
         this.isToConfirmDelete = false;
     }
@@ -476,7 +536,7 @@ let CourseDetailsComponent = class CourseDetailsComponent {
     }
     deleteCourse(course) {
         this.courseService.deleteCourse(course).subscribe(data => {
-            // this.toastr.success("Movie was deleted successfully")
+            this.toastr.success("Movie was deleted successfully");
             this.router.navigate(['/courses']);
         });
     }
@@ -484,6 +544,7 @@ let CourseDetailsComponent = class CourseDetailsComponent {
 CourseDetailsComponent.ctorParameters = () => [
     { type: src_app_services_courses_service__WEBPACK_IMPORTED_MODULE_2__["CourseService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 CourseDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -526,20 +587,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var src_app_services_courses_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/courses.service */ "./src/app/services/courses.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 
 
 
 
 
-// import { ToastrService } from 'ngx-toastr';
+
 let CourseFormComponent = class CourseFormComponent {
-    constructor(route, courseService, fb, router) {
+    constructor(route, courseService, fb, router, toastr) {
         this.route = route;
         this.courseService = courseService;
         this.fb = fb;
         this.router = router;
+        this.toastr = toastr;
     }
-    // private toastr : ToastrService) { }
     ngOnInit() {
         this.courseForm = this.fb.group({
             id: [null],
@@ -576,13 +638,13 @@ let CourseFormComponent = class CourseFormComponent {
             const course = Object.assign({}, this.courseForm.value);
             if (this.isEdit) {
                 this.courseService.updateCourse(course).subscribe(data => {
-                    // this.toastr.success("Course updated added.")
+                    this.toastr.success("Course updated added.");
                     this.router.navigate([`/courses/${course.id}`]);
                 });
             }
             else {
                 this.courseService.addCourse(course).subscribe(data => {
-                    // this.toastr.success("Course successfully added.")
+                    this.toastr.success("Course successfully added.");
                     this.router.navigate(['/courses']);
                 });
             }
@@ -593,7 +655,8 @@ CourseFormComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
     { type: src_app_services_courses_service__WEBPACK_IMPORTED_MODULE_4__["CourseService"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"] }
 ];
 CourseFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -682,7 +745,7 @@ CourseListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("img {\n  height: 128px;\n  width: 128px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  margin: auto; }\n\n.card {\n  padding-top: 10px; }\n\n.title {\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9za3lsZXJ3aWxsZGVuL0Rlc2t0b3Avc3ByaW5nMjAyMC9XRUIzNDMwL0NvdXJzZXNGdWxsU3RhY2svbmcvc3JjL2FwcC9jb21wb25lbnRzL2NvdXJzZS9jb3Vyc2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFhO0VBQ2IsWUFBWTtFQUNaLG9CQUFpQjtLQUFqQixpQkFBaUI7RUFDakIsWUFBWSxFQUFBOztBQUdoQjtFQUNJLGlCQUFpQixFQUFBOztBQUdyQjtFQUNJLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9jb3Vyc2UvY291cnNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcbiAgICBoZWlnaHQ6IDEyOHB4O1xuICAgIHdpZHRoOiAxMjhweDtcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcbiAgICBtYXJnaW46IGF1dG87XG59XG5cbi5jYXJkIHtcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcbn1cblxuLnRpdGxlIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cblxuXG5cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("img {\n  height: 128px;\n  width: 128px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  margin: auto; }\n\n.card {\n  padding-top: 10px; }\n\n.title {\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9za3lsZXJ3aWxsZGVuL0Rlc2t0b3Avc3ByaW5nMjAyMC9XRUIzNDMwL0NvdXJzZVRlc3Qvbmcvc3JjL2FwcC9jb21wb25lbnRzL2NvdXJzZS9jb3Vyc2UuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFhO0VBQ2IsWUFBWTtFQUNaLG9CQUFpQjtLQUFqQixpQkFBaUI7RUFDakIsWUFBWSxFQUFBOztBQUdoQjtFQUNJLGlCQUFpQixFQUFBOztBQUdyQjtFQUNJLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9jb3Vyc2UvY291cnNlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcbiAgICBoZWlnaHQ6IDEyOHB4O1xuICAgIHdpZHRoOiAxMjhweDtcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcbiAgICBtYXJnaW46IGF1dG87XG59XG5cbi5jYXJkIHtcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcbn1cblxuLnRpdGxlIHtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cblxuXG5cbiJdfQ== */");
 
 /***/ }),
 
@@ -720,6 +783,183 @@ CourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/user-register/user-register.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/user-register/user-register.component.scss ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1yZWdpc3Rlci91c2VyLXJlZ2lzdGVyLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/user-register/user-register.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/user-register/user-register.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: UserRegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRegisterComponent", function() { return UserRegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+
+let UserRegisterComponent = class UserRegisterComponent {
+    constructor(fb, toastr, router, userService) {
+        this.fb = fb;
+        this.toastr = toastr;
+        this.router = router;
+        this.userService = userService;
+    }
+    ngOnInit() {
+        this.userRegister = this.fb.group({
+            _id: [null],
+            firstName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            lastName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            email: [null, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/.+@.+\..+/)]],
+            username: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
+    }
+    submitForm(f) {
+        if (f.valid) {
+            const user = Object.assign({}, this.userRegister.value);
+            this.userService.register(user).subscribe(res => {
+                this.toastr.success("Successfully registered");
+                this.router.navigate(["/courses"]);
+            }, err => {
+                this.toastr.error("Unable to register");
+            });
+        }
+    }
+    get firstName() { return this.userRegister.get('firstName'); }
+    get lastName() { return this.userRegister.get('lastName'); }
+    get email() { return this.userRegister.get('email'); }
+    get username() { return this.userRegister.get('username'); }
+    get password() { return this.userRegister.get('password'); }
+};
+UserRegisterComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"] }
+];
+UserRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user-register',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-register.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-register/user-register.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-register.component.scss */ "./src/app/components/user-register/user-register.component.scss")).default]
+    })
+], UserRegisterComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/user-signin/user-signin.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/user-signin/user-signin.component.scss ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdXNlci1zaWduaW4vdXNlci1zaWduaW4uY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/components/user-signin/user-signin.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/user-signin/user-signin.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: UserSigninComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserSigninComponent", function() { return UserSigninComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_models_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/models/user */ "./src/app/models/user.ts");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+
+
+
+
+
+
+let UserSigninComponent = class UserSigninComponent {
+    constructor(userService, router, toastr) {
+        this.userService = userService;
+        this.router = router;
+        this.toastr = toastr;
+        this.user = new src_app_models_user__WEBPACK_IMPORTED_MODULE_2__["User"]();
+    }
+    ngOnInit() {
+    }
+    submitForm(f) {
+        if (f.valid) {
+            this.userService.signin(this.user).subscribe(res => {
+                this.toastr.success("Successfully signed in");
+                this.router.navigate(["/courses"]);
+            }, err => {
+                this.toastr.error("Unable to sign in");
+            });
+        }
+    }
+};
+UserSigninComponent.ctorParameters = () => [
+    { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"] }
+];
+UserSigninComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-user-signin',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./user-signin.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/user-signin/user-signin.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./user-signin.component.scss */ "./src/app/components/user-signin/user-signin.component.scss")).default]
+    })
+], UserSigninComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.ts":
+/*!********************************!*\
+  !*** ./src/app/models/user.ts ***!
+  \********************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class User {
+}
+
+
+/***/ }),
+
 /***/ "./src/app/routes.ts":
 /*!***************************!*\
   !*** ./src/app/routes.ts ***!
@@ -734,17 +974,68 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/course-list/course-list.component */ "./src/app/components/course-list/course-list.component.ts");
 /* harmony import */ var _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/course-form/course-form.component */ "./src/app/components/course-form/course-form.component.ts");
 /* harmony import */ var _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/course-details/course-details.component */ "./src/app/components/course-details/course-details.component.ts");
+/* harmony import */ var _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/user-signin/user-signin.component */ "./src/app/components/user-signin/user-signin.component.ts");
+/* harmony import */ var _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/user-register/user-register.component */ "./src/app/components/user-register/user-register.component.ts");
+/* harmony import */ var _services_auth_guard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.guard */ "./src/app/services/auth.guard.ts");
+
+
+
 
 
 
 
 const routes = [
     { path: 'courses', component: _components_course_list_course_list_component__WEBPACK_IMPORTED_MODULE_1__["CourseListComponent"] },
-    { path: 'courses/new', component: _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_2__["CourseFormComponent"] },
-    { path: 'courses/:id/edit', component: _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_2__["CourseFormComponent"] },
+    { path: 'courses/new', component: _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_2__["CourseFormComponent"], canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]] },
+    { path: 'courses/:id/edit', component: _components_course_form_course_form_component__WEBPACK_IMPORTED_MODULE_2__["CourseFormComponent"], canActivate: [_services_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]] },
     { path: 'courses/:id', component: _components_course_details_course_details_component__WEBPACK_IMPORTED_MODULE_3__["CourseDetailsComponent"] },
+    { path: 'register', component: _components_user_register_user_register_component__WEBPACK_IMPORTED_MODULE_5__["UserRegisterComponent"] },
+    { path: 'signin', component: _components_user_signin_user_signin_component__WEBPACK_IMPORTED_MODULE_4__["UserSigninComponent"] },
     { path: "", redirectTo: "courses", pathMatch: "full" }
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth.guard.ts":
+/*!****************************************!*\
+  !*** ./src/app/services/auth.guard.ts ***!
+  \****************************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user.service */ "./src/app/services/user.service.ts");
+
+
+
+
+let AuthGuard = class AuthGuard {
+    constructor(router) {
+        this.router = router;
+    }
+    canActivate(route, state) {
+        if (_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"].isAuthenticated()) {
+            return true;
+        }
+        this.router.navigate(["/signin"]);
+        return false;
+    }
+};
+AuthGuard.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AuthGuard);
+
 
 
 /***/ }),
@@ -800,6 +1091,71 @@ CourseService.ctorParameters = () => [
 CourseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], CourseService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/user.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/user.service.ts ***!
+  \******************************************/
+/*! exports provided: UserService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-cookie-service */ "./node_modules/ngx-cookie-service/fesm2015/ngx-cookie-service.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+
+const httpHeaders = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        'Content-Type': 'application/json'
+    })
+};
+let UserService = class UserService {
+    constructor(http, cookieService) {
+        this.http = http;
+        this.cookieService = cookieService;
+    }
+    register(user) {
+        return this.http.post("/api/users/register", user, httpHeaders);
+    }
+    signin(user) {
+        let res = this.http.post("/api/users/signin", user, httpHeaders);
+        return res.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => {
+            if (data["token"]) {
+                localStorage.setItem("token", data["token"]);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }));
+    }
+    signout() {
+        this.cookieService.delete("token");
+        localStorage.removeItem("token");
+    }
+    static isAuthenticated() {
+        return localStorage.getItem("token") != null;
+    }
+};
+UserService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }
+];
+UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], UserService);
 
 
 
@@ -870,7 +1226,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/skylerwillden/Desktop/spring2020/WEB3430/CoursesFullStack/ng/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/skylerwillden/Desktop/spring2020/WEB3430/CourseTest/ng/src/main.ts */"./src/main.ts");
 
 
 /***/ })

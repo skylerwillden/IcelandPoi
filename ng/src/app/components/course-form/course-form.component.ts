@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Course } from 'src/app/models/Course';
 import { CourseService } from 'src/app/services/courses.service';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -18,8 +18,8 @@ export class CourseFormComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private courseService: CourseService,
     private fb : FormBuilder,
-    private router: Router) {}
-    // private toastr : ToastrService) { }
+    private router: Router,
+    private toastr : ToastrService){ }
 
   ngOnInit() {
     this.courseForm = this.fb.group({
@@ -61,13 +61,13 @@ export class CourseFormComponent implements OnInit {
       const course : Course = Object.assign({}, this.courseForm.value)
       if (this.isEdit){
         this.courseService.updateCourse(course).subscribe(data => {
-          // this.toastr.success("Course updated added.")
+          this.toastr.success("Course updated added.")
           this.router.navigate([`/courses/${course.id}`])
         })
       }
       else {
         this.courseService.addCourse(course).subscribe(data => {
-          // this.toastr.success("Course successfully added.")
+          this.toastr.success("Course successfully added.")
           this.router.navigate(['/courses'])
         })
       }

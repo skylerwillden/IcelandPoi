@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Course } from 'src/app/models/Course';
 import { CourseService } from 'src/app/services/courses.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-course-details',
@@ -16,6 +17,7 @@ export class CourseDetailsComponent implements OnInit {
   
   constructor(private courseService : CourseService,
               private route : ActivatedRoute,
+              private toastr: ToastrService,
               private router : Router) { }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class CourseDetailsComponent implements OnInit {
 
   deleteCourse(course : Course) : void{
     this.courseService.deleteCourse(course).subscribe(data  => {
-        // this.toastr.success("Movie was deleted successfully")
+        this.toastr.success("Movie was deleted successfully")
         this.router.navigate(['/courses'])
     })
   }

@@ -1,7 +1,7 @@
 import passport from 'passport'
 import { User } from '../models/user'
 
-export const signupAPI = (req, res, next) => {
+export const registerUserAPI = (req, res, next) => {
     let user = new User
     user.firstName = req.body.firstName
     user.lastName = req.body.lastName
@@ -19,7 +19,7 @@ export const signupAPI = (req, res, next) => {
 }
 
 
-export const signinAPI = (req, res, next) => {
+export const signinUserAPI = (req, res, next) => {
     passport.authenticate('local', (err, user, info) =>  {
         if(err){
             res.status(404).json(err)

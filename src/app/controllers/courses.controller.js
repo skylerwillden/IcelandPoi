@@ -1,7 +1,7 @@
 import { Course } from '../models/user'
 
 export const allCoursesAPI = (req, res, next) => {
-    Course.find().exec()((err, courses)  => {
+    Course.find().exec((err, courses)  => {
         if(err){
             res.json({sucess: false, message: 'Failed query'})
             res.end()
