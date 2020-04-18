@@ -1,24 +1,9 @@
-# Courses
+# IcelandPoi
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
-## Installing Angular
-Make sure to first have angular `ng` command installed by running:
-
-`npm install @angular/cli -g`
-
-If you run into a permission issue (on MacOS or Linux), run the following instead.
-
-`sudo npm install @angular/cli -g`
-
-## Run the application in development
-After you clone this repository, do the following to run this application:
-
-```bash
-cd <your-cloned-repository-folder>
-ng serve --open
-```
-
 ## Development server
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
