@@ -8,7 +8,7 @@ let sassMiddleware = require('node-sass-middleware');
 
 // Connecting to the database
 import { connect } from './src/config/db'
-connect("mongodb://localhost:27017/courses")
+connect("mongodb://localhost:27017/locations")
 
 export let app = express();
 
